@@ -1,0 +1,23 @@
+# Ignore virtual environment
+venv/
+ENV/
+.env/
+
+# Ignore Chroma DB files
+backend/storage/chroma_db/
+backend/storage/uploads/
+
+# Ignore auto-generated scripts
+selenium_scripts/generated/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore torch and chromadb extensions
+*.dll
+*.pyd

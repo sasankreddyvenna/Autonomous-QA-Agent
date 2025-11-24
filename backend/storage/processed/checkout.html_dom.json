@@ -1,0 +1,98 @@
+{
+  "ids": [
+    "address",
+    "address-error",
+    "cart-items",
+    "checkout-form",
+    "discount-code",
+    "email",
+    "email-error",
+    "name",
+    "name-error",
+    "pay-now",
+    "success-msg",
+    "total"
+  ],
+  "classes": [
+    "cart",
+    "error",
+    "product"
+  ],
+  "inputs": [
+    {
+      "tag": "input",
+      "type": "text",
+      "id": "discount-code",
+      "name": null,
+      "placeholder": null
+    },
+    {
+      "tag": "input",
+      "type": "text",
+      "id": "name",
+      "name": null,
+      "placeholder": null
+    },
+    {
+      "tag": "input",
+      "type": "email",
+      "id": "email",
+      "name": null,
+      "placeholder": null
+    },
+    {
+      "tag": "input",
+      "type": "text",
+      "id": "address",
+      "name": null,
+      "placeholder": null
+    },
+    {
+      "tag": "input",
+      "type": "radio",
+      "id": null,
+      "name": "shipping",
+      "placeholder": null
+    },
+    {
+      "tag": "input",
+      "type": "radio",
+      "id": null,
+      "name": "shipping",
+      "placeholder": null
+    },
+    {
+      "tag": "input",
+      "type": "radio",
+      "id": null,
+      "name": "payment",
+      "placeholder": null
+    },
+    {
+      "tag": "input",
+      "type": "radio",
+      "id": null,
+      "name": "payment",
+      "placeholder": null
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Add to Cart",
+      "id": null,
+      "class": null
+    },
+    {
+      "text": "Add to Cart",
+      "id": null,
+      "class": null
+    },
+    {
+      "text": "Pay Now",
+      "id": "pay-now",
+      "class": null
+    }
+  ],
+  "selects": [],
+  "labels": []
+}

@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+python-multipart
+streamlit
+chromadb
+sentence-transformers
+pymupdf
+beautifulsoup4
+lxml
+selenium
+requests
+groq
