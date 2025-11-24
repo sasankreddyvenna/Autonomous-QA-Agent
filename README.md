@@ -25,8 +25,30 @@ authoring using LLMs.
     ├── backend/
     │   ├── app.py
     │   ├── routes/
+    │   │     ├── ingest_routes.py
+    │   │     ├── testcase_routes.py
+    │   │     ├── script_routes.py
     │   ├── services/
-    │
+    │   │    ├── knowledge_base/
+    │   │         ├── chroma_client.py 
+    │   │         └── embedder.py 
+    │   │
+    │   ├── groq_client/
+    │   │         ├── generator.py 
+    │   │         └── prompts/
+    │   │              ├── testcase_prompt.txt
+    │   │              └── script_prompt.txt
+    │   │
+    │   └── selenium/
+    │   │      └── script_generator.py
+    │   │      
+    │   ├── storage/  
+    │   │      └── chroma_db/
+    │   │
+    │   │
+    │   │
+    │   ├── utils/    
+    │   │  
     ├── ui/
     │   ├── app.py
     │
@@ -192,3 +214,4 @@ MIT License
 
 If you find this project helpful: ✅ Star ⭐ the repository\
 ✅ Share with others
+
