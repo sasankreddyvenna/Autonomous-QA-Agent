@@ -1,154 +1,194 @@
-🧠 Autonomous QA Agent
+# 🤖 Autonomous QA Agent
 
-An AI-powered system that automates the generation of Test Cases and Selenium Test Scripts using document ingestion, vector search, and LLM-based reasoning.
+An AI-powered system that automates **Test Case Generation** and
+**Selenium Script Generation** from uploaded requirement documents.
 
-This project enables QA teams to:
-✅ Upload requirement documents
-✅ Generate context-based test cases
-✅ Select a test case
-✅ Automatically generate Selenium scripts
+Perfect for QA engineers, testers, and teams looking to speed up test
+authoring using LLMs.
 
-🚀 Features
-✅ Phase 1: Document Ingestion
+------------------------------------------------------------------------
 
-Upload PDF, TXT, HTML, MD, JSON
+## ✅ What This Tool Does
 
-Extract text
+✔️ Upload requirement documents\
+✔️ Extract & store knowledge in a vector database\
+✔️ Generate test cases grounded in context\
+✔️ Select a test case & auto-generate Selenium scripts\
+✔️ View scripts on screen & download as `.py`
 
-Generate embeddings
+------------------------------------------------------------------------
 
-Store in ChromaDB for vector search
+## 🗂 Project Structure
 
-✅ Phase 2: Test Case Generation
+    Autonomous-QA-Agent/
+    │
+    ├── backend/
+    │   ├── app.py
+    │   ├── routes/
+    │   ├── services/
+    │
+    ├── ui/
+    │   ├── app.py
+    │
+    ├── requirements.txt
+    ├── .gitignore
+    └── README.md
 
-Enter a query (e.g., "Generate test cases for login")
+------------------------------------------------------------------------
 
-Retrieves relevant context from database
+## ✅ System Requirements
 
-LLM generates test cases in tabular format
+  Requirement    Version
+  -------------- --------------------------
+  Python         3.9+
+  Pip            Latest
+  Chrome         Latest
+  ChromeDriver   Matching browser version
+  Groq API Key   Required
 
-Displayed in a selectable table UI
+------------------------------------------------------------------------
 
-✅ Phase 3: Selenium Script Generation
+## 🔧 Installation & Setup
 
-Select a test case from the table
+### 1️⃣ Clone the Repository
 
-Automatically generates Python Selenium script
-
-View on screen
-
-Download the script as .py
-
-🏗️ Project Structure
-Autonomous-QA-Agent/
-│
-├── backend/
-│   ├── app.py
-│   ├── routes/
-│   │   ├── ingest_routes.py
-│   │   ├── testcase_routes.py
-│   │   ├── script_routes.py
-│   ├── services/
-│       ├── knowledge_base/
-│       ├── groq_client/
-│       ├── selenium_generator/
-│
-├── ui/
-│   ├── app.py (Streamlit UI)
-│
-├── venv/
-├── .gitignore
-├── README.md
-└── requirements.txt
-
-✅ Prerequisites
-
-Make sure you have:
-
-Python 3.9+
-
-pip
-
-Groq API Key
-
-Chrome browser & ChromeDriver (for Selenium scripts)
-
-🔧 Installation
+``` bash
 git clone https://github.com/sasankreddyvenna/Autonomous-QA-Agent.git
 cd Autonomous-QA-Agent
+```
+
+### 2️⃣ Create & Activate Virtual Environment
+
+**Windows**
+
+``` bash
 python -m venv venv
-source venv/bin/activate   # (Mac/Linux)
-venv\Scripts\activate      # (Windows)
+venv\Scripts\activate
+```
+
+**Mac/Linux**
+
+``` bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3️⃣ Install Dependencies
+
+``` bash
 pip install -r requirements.txt
+```
 
-🔐 Environment Variables
+------------------------------------------------------------------------
 
-Create a .env file (NOT committed to GitHub):
+## 🔐 Configure Environment Variables
 
-GROQ_API_KEY=YOUR_KEY_HERE
+Create a `.env` file inside the **backend** folder:
 
+    GROQ_API_KEY=YOUR_KEY_HERE
 
-✅ Keep .env private
-✅ .env is listed in .gitignore
+✅ Do NOT commit this file\
+✅ `.env` is ignored by git
 
-▶️ Running the Backend (FastAPI)
+------------------------------------------------------------------------
+
+## ▶️ Start the Backend (FastAPI)
+
+``` bash
 cd backend
 uvicorn app:app --reload
+```
 
+Backend runs at: 👉 http://127.0.0.1:8000
 
-Backend will run at:
+------------------------------------------------------------------------
 
-👉 http://127.0.0.1:8000
+## 🖥️ Start the UI (Streamlit)
 
-🖥️ Running the UI (Streamlit)
+Open a new terminal:
+
+``` bash
 cd ui
 streamlit run app.py
+```
 
+UI opens in your browser ✅
 
-UI will open in your browser.
+------------------------------------------------------------------------
 
-🧩 API Endpoints
-Endpoint	Method	Description
-/ingest/upload	POST	Upload & index documents
-/testcases/generate	POST	Generate test cases
-/script/generate	POST	Generate Selenium script
-📄 Output Examples
-✅ Test Case Table
-ID	Scenario	Steps	Expected Result
-TC-LOGIN-1	Valid Login	Enter credentials	Redirect to dashboard
-✅ Selenium Script
+## 🧪 How to Use
+
+### ✅ Step 1: Upload Documents
+
+-   Upload PDF, TXT, MD, JSON, or HTML
+-   System ingests & stores content in vector DB
+
+### ✅ Step 2: Generate Test Cases
+
+-   Enter a query (e.g., "Generate test cases for login")
+-   View results in a table
+
+### ✅ Step 3: Generate Selenium Script
+
+-   Select a test case
+-   Click **Generate Script**
+-   View script on screen
+-   Download `.py` file
+
+------------------------------------------------------------------------
+
+## ⚙️ API Endpoints
+
+  Endpoint                Method   Description
+  ----------------------- -------- ---------------------------
+  `/ingest/upload`        POST     Upload & ingest documents
+  `/testcases/generate`   POST     Generate test cases
+  `/script/generate`      POST     Generate Selenium script
+
+------------------------------------------------------------------------
+
+## 📌 Example Selenium Output
+
+``` python
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
 driver.get("https://example.com")
+```
 
-🛡️ Security
+------------------------------------------------------------------------
 
-✅ Secrets removed from repo
-✅ .env protected
-✅ Uses GitHub Push Protection
+## 🔒 Security Notes
 
-⚠️ Never commit API keys.
+✅ No secrets are committed to the repo\
+✅ GitHub push protection is enabled\
+✅ Always store API keys in `.env`
 
-🤝 Contributing
+------------------------------------------------------------------------
+
+## 🚀 Roadmap
+
+-   Playwright support
+-   Test execution engine
+-   CI/CD integration
+-   Multi-user workspace
+
+------------------------------------------------------------------------
+
+## 🤝 Contributing
 
 Pull requests are welcome!
-For major changes, please open an issue first.
 
-📜 License
+------------------------------------------------------------------------
+
+## 📜 License
 
 MIT License
 
-⭐ Support
+------------------------------------------------------------------------
 
-If this project helps you:
+## ⭐ Support
 
-✅ Star the repo ⭐
-✅ Share with your network
-
-✅ Next Up (Future Enhancements)
-
-🔹 Playwright script generation
-🔹 Test execution engine
-🔹 CI/CD integration
+If you find this project helpful: ✅ Star ⭐ the repository\
+✅ Share with others
