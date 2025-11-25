@@ -1,0 +1,11 @@
+UI/UX Guidelines for Checkout Page
+
+1. All forms must contain descriptive labels.
+2. Buttons must have clear call-to-action:
+   - "Apply" for discount
+   - "Place Order" for purchase
+3. Error messages should be shown in the #discount-message or #order-status elements.
+4. Placeholder text must not be used as a replacement for labels.
+5. Success messages must appear inside:
+   - #discount-message for discount
+   - #order-status for order confirmation
