@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout Page</title>
+</head>
+<body>
+
+<h1>Checkout</h1>
+
+<div id="product-section">
+    <h2 id="product-title">UltraBoost Running Shoes</h2>
+    <span class="price" id="price-value">$120</span>
+</div>
+
+<form id="discount-form">
+    <label for="discount-input">Enter Discount Code:</label>
+    <input type="text" id="discount-input" name="discount_code" placeholder="DISCOUNT2025" />
+    <button id="apply-discount-btn">Apply</button>
+</form>
+
+<div id="discount-message" class="message"></div>
+
+<form id="checkout-form">
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="full_name"/>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email"/>
+
+    <label for="address">Shipping Address</label>
+    <textarea id="address" name="shipping_address"></textarea>
+
+    <button id="place-order-btn">Place Order</button>
+</form>
+
+<div id="order-status" class="status"></div>
+
+</body>
+</html>

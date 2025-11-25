@@ -1,0 +1,35 @@
+{
+  "endpoints": {
+    "POST /apply-discount": {
+      "request": {
+        "discount_code": "string"
+      },
+      "responses": {
+        "200": {
+          "message": "Discount applied successfully",
+          "new_price": "number"
+        },
+        "400": {
+          "error": "Invalid or expired discount code"
+        }
+      }
+    },
+    "POST /place-order": {
+      "request": {
+        "full_name": "string",
+        "email": "string",
+        "shipping_address": "string",
+        "items": ["product_id"]
+      },
+      "responses": {
+        "201": {
+          "order_id": "string",
+          "status": "confirmed"
+        },
+        "422": {
+          "error": "Missing required fields"
+        }
+      }
+    }
+  }
+}
