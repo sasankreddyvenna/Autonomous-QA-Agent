@@ -6,7 +6,6 @@ An AI-powered system that automates **Test Case Generation** and
 Perfect for QA engineers, testers, and teams looking to speed up test
 authoring using LLMs.
 
-🌐 Live Demo: http://3.110.83.254:8501/
 ------------------------------------------------------------------------
 
 ## ✅ What This Tool Does
@@ -215,5 +214,6 @@ MIT License
 
 If you find this project helpful: ✅ Star ⭐ the repository\
 ✅ Share with others
+
 
 
